@@ -1,24 +1,19 @@
-const { createSign, createVerify } = require('crypto');
-const { publicKey, privateKey } = require('./keypair');
+const {  publicEncrypt, privateDecrypt } = require('crypto');
+const { publicKey, privateKey } = require('keypair');
 
-const data = 'this data must be signed';
+secretMessage = "fuck you:)"
+const encryptedData = publicEncrypt(
+    publicKey,
+    Buffer.from(secretMessage)
+  );
 
-/// SIGN
 
-const signer = createSign('rsa-sha256');
+console.log(encryptedData.toString('hex'))
 
-signer.update(data);
 
-const siguature = signer.sign(privateKey, 'hex');
+const decryptedData = privateDecrypt(
+    privateKey,
+    encryptedData
+);
 
-console.log(siguature);
-
-/// VERIFY
-
-const verifier = createVerify('rsa-sha256');
-
-verifier.update(data);
-
-const isVerified = verifier.verify(publicKey, siguature, 'hex');
-
-console.log(isVerified);
+console.log(decryptedData.toString('utf-8'));
