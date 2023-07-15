@@ -1,18 +1,22 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width" />
-        <link href="src/asset/style.css" rel="stylesheet" />      
-        <title>Testing!</title>
-    </head>
-    <body>
-      <img src="src/asset/icon.jpg">
-    </body>
-    <script src="src/index.js"></script>
-    <script src="https://unpkg.com/htmx.org@1.9.2"></script>
-    <!-- have a button POST a click via AJAX -->
-    <button hx-post="/clicked" hx-swap="outerHTML">
-      Click Me
-    </button>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width" />
+    <link href="src/asset/style.css" rel="stylesheet" />  
+    <link rel="apple-touch-icon" sizes="180x180" href="src/asset/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="src/asset/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="src/asset/favicon-16x16.png">
+    <link rel="manifest" href="src/asset/site.webmanifest">    
+    <title>Testing!</title>
+  </head>
+  <body>
+    <img src="src/asset/icon.jpg">
+  </body>
+  <script src="src/index.js"></script>
+  <script src="https://unpkg.com/htmx.org@1.9.2"></script>
+  <!-- have a button POST a click via AJAX -->
+  <button hx-post="data.txt" hx-swap="outerHTML">
+    Click Me
+  </button>
 </html>
